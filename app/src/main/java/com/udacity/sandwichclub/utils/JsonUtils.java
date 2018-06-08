@@ -33,7 +33,7 @@ public class JsonUtils {
             JSONObject nameJsonObject = sandwichJsonObject.getJSONObject("name");
             sandwich.setMainName(nameJsonObject.getString("mainName"));
             JSONArray alsoKnownAsJsonArray = nameJsonObject.getJSONArray("alsoKnownAs");
-            if (alsoKnownAsJsonArray != null && alsoKnownAsJsonArray.length() > 0) {
+            if (alsoKnownAsJsonArray != null) {
                 List<String> alsoKnownAsList = new ArrayList<>();
                 for (int i = 0; i < alsoKnownAsJsonArray.length(); i++) {
                     alsoKnownAsList.add(alsoKnownAsJsonArray.getString(i));
@@ -47,7 +47,7 @@ public class JsonUtils {
             sandwich.setImage(sandwichJsonObject.getString("image"));
             //ingredients field is a json array of type string
             JSONArray ingredientsJsonArray = sandwichJsonObject.getJSONArray("ingredients");
-            if (ingredientsJsonArray != null && ingredientsJsonArray.length() > 0) {
+            if (ingredientsJsonArray != null) {
                 List<String> ingredientsList = new ArrayList<>();
                 for (int i = 0; i < ingredientsJsonArray.length(); i++) {
                     ingredientsList.add(ingredientsJsonArray.getString(i));
